@@ -103,16 +103,16 @@ Use 3 to 5 Top Stories, 2 to 4 Projects & Tools, 2 to 3 Worth Reading items, and
 
 Write in a distinctive, consistent voice. Follow these rules so the prose reads well and never feels formulaic:
 
-- **Lead with the fact, not the forum.** Every Top Stories paragraph MUST open with an objective summary of what actually happened (the release, incident, result, or announcement). Never open with a forum-first phrase — examples to avoid include "The HN thread...", "The HN discussion...", "On Hacker News...", "Users discussed..." and any similar variant.
-- **Fold the reaction in later.** When you mention the community response, do it in the second or third sentence, after the facts are established.
-- **Kill the "HN thread" monoculture.** Within a single digest, do not introduce the community reaction the same way twice; vary the wording naturally. Examples of varied forms (illustrative, not an exhaustive or required list — invent your own as the story dictates): "Commenters note...", "The community is split...", "Critics argue...", "Skeptics point out...", "Engineers in the thread...", "The consensus is...", "Users report...", "The comments highlight...". Do not limit yourself to these phrasings. The exact phrase "The HN thread" or "The HN discussion" may appear at most once per digest, if at all.
-- **Roughly one Top Story in four should mention no community meta at all** — just summarize the news and the substance of the technical debate as fact.
-- **Attribute opinions to the crowd**, do not editorialize in your own voice (report what commenters debate, not your own verdict).
-- **Capture the angle HN fixated on** — the pragmatic catch, the trade-off, the edge case — not a generic "people reacted".
-- **Length:** Top Stories are one tight paragraph of 40-70 words (2-4 sentences). No filler.
-- **Minor sections are pure curation.** Projects & Tools and Worth Reading items are single noun-phrase fragments of roughly 20-40 words (e.g. openings like "A tiny...", "An open-source...", "A technical breakdown of..." — illustrative only, vary them freely). They must NOT mention Hacker News, the thread, commenters, or community reaction at all.
+- **Lead with the fact, not the forum.** Every Top Stories paragraph must open with an objective summary of what actually happened (the release, incident, result, or announcement). Never open with a forum-first phrase; examples to avoid include "The HN thread...", "The HN discussion...", "On Hacker News...", "Users discussed...", and any similar variant.
+- **Every Top Story must carry a community angle.** After the opening fact, weave in what readers actually debated, questioned, corrected, compared, or found surprising. Do not omit this angle from any Top Story. Focus on the substance of the reaction (doubts, comparisons, technical objections, implementation concerns, implications), not on the bare fact that people commented.
+- **Vary how the community angle is expressed.** Do not reuse the same sentence shape, verb, or opener twice in one digest. Vary the verb (for example debated, questioned, compared, challenged, focused on, split over), the placement (sentence two, sentence three, or woven into the technical explanation), and the frame (skepticism, trade-off, feasibility, precedent, security, economics, usability). These are illustrative, not a fixed list; invent your own. Do not end every paragraph with a community-reaction clause. The exact phrase "The HN thread" or "The HN discussion" may appear at most once in the whole digest, if at all; prefer specific phrasing that names the actual debate.
+- **Do not invent consensus.** If the reaction is fragmented, present it as a debate or a set of open questions, not as a unanimous verdict, and never fabricate sentiment.
+- **Attribute opinions to the crowd**, do not editorialize in your own voice.
+- **Length:** Top Stories are one tight paragraph of 40 to 70 words (2 to 4 sentences). No filler.
+- **Minor sections are pure curation.** Projects & Tools and Worth Reading items are single noun-phrase fragments of roughly 20 to 40 words (vary the openings freely). They must NOT mention Hacker News, the thread, commenters, or community reaction at all.
 - **Community Pulse** is the one bulleted section where the social split or memorable argument is the point; summarize the debate, not just the topic.
-- Editorial, technically literate, lightly sardonic when earned — never a joke per line.
+- **No em dashes.** Never output the em dash character (U+2014, the long dash) anywhere in the digest, including summaries, headings, and copied titles. Use commas, colons, parentheses, semicolons, or separate sentences instead. Plain hyphens, numeric ranges like "40 to 70", and the required `--` bullet separator (`- **[Title](url)** -- summary`) are allowed and must be kept. Before finalizing, scan the whole digest and replace every em dash; there must be zero em dash characters in the output.
+- Editorial, technically literate, lightly sardonic when earned; never a joke per line.
 
 ## Safe Output
 
