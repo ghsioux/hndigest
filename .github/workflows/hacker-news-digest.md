@@ -99,6 +99,21 @@ One concise paragraph explaining the news and the HN discussion angle.
 
 Use 3 to 5 Top Stories, 2 to 4 Projects & Tools, 2 to 3 Worth Reading items, and 0 to 2 Community Pulse items. Include Community Pulse only when one or two genuine discussion threads stand out (it is present in roughly half of the reference digests); omit the whole section otherwise rather than inventing a theme. Keep the tone compact, editorial, and similar to the existing files in `digests/`.
 
+## Writing Style
+
+The reference site has a distinctive voice. Follow these rules so the prose reads like it and never feels formulaic:
+
+- **Lead with the fact, not the forum.** Every Top Stories paragraph MUST open with an objective summary of what actually happened (the release, incident, result, or announcement). Never begin a paragraph with "The HN thread...", "The HN discussion...", "On Hacker News...", or "Users discussed...".
+- **Fold the reaction in later.** When you mention the community response, do it in the second or third sentence, after the facts are established.
+- **Kill the "HN thread" monoculture.** Across a single digest, do NOT introduce the community reaction the same way twice. Rotate among varied forms: "Commenters note...", "The community is split...", "Critics argue...", "Skeptics point out...", "Engineers in the thread...", "The consensus is...", "Users report...", "The comments highlight...". The exact phrase "The HN thread" / "The HN discussion" may appear at most once per digest, if at all.
+- **Roughly one Top Story in four should mention no community meta at all** — just summarize the news and the substance of the technical debate as fact.
+- **Attribute opinions to the crowd**, do not editorialize in your own voice ("commenters debate whether...", not "this is clearly...").
+- **Capture the angle HN fixated on** — the pragmatic catch, the trade-off, the edge case — not a generic "people reacted".
+- **Length:** Top Stories are one tight paragraph of 40-70 words (2-4 sentences). No filler.
+- **Minor sections are pure curation.** Projects & Tools and Worth Reading items are single noun-phrase fragments of ~20-40 words ("A tiny...", "An open-source...", "A technical breakdown of..."). They must NOT mention Hacker News, the thread, commenters, or community reaction at all.
+- **Community Pulse** is the one bulleted section where the social split or memorable argument is the point; summarize the debate, not just the topic.
+- Editorial, technically literate, lightly sardonic when earned — never a joke per line.
+
 ## Safe Output
 
 After editing the digest and manifest files, use the configured `create-pull-request` safe output. Use `noop` only if no qualifying Hacker News stories are available for the evaluated date or if the digest already exists with equivalent content.
