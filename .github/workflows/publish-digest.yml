@@ -1,0 +1,42 @@
+name: Publish Digest
+
+# Merges the daily digest pull request opened by the "Hacker News Digest" agentic
+# workflow so the GitHub Pages site is updated automatically at the end of each run.
+# Native auto-merge requires branch protection; this companion job merges directly,
+# which works on an unprotected branch.
+
+on:
+  workflow_run:
+    workflows: ["Hacker News Digest"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: publish-digest
+  cancel-in-progress: false
+
+jobs:
+  merge:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Merge open digest pull requests
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          prs=$(gh pr list --repo "$REPO" --state open --label automation \
+            --json number,title --jq '.[] | select(.title | startswith("Hacker News Digest:")) | .number')
+          if [ -z "$prs" ]; then
+            echo "No open digest pull requests to merge."
+            exit 0
+          fi
+          for pr in $prs; do
+            echo "Merging digest PR #$pr"
+            gh pr merge "$pr" --repo "$REPO" --merge --delete-branch
+          done

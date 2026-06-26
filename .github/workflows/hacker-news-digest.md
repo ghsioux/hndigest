@@ -26,7 +26,6 @@ safe-outputs:
     branch-prefix: "hndigest/"
     labels: [automation]
     draft: false
-    auto-merge: true
     if-no-changes: ignore
     protected-files: allowed
     allowed-files:
