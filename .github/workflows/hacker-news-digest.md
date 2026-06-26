@@ -55,10 +55,10 @@ Do not invent stories, IDs, titles, repository links, source links, quotes, or m
 
 Place each story in the right section. These definitions match the reference site's historical conventions:
 
-- **Top Stories** -- the day's lead, highest-salience HN front-page news: major releases, security incidents, business shocks, infrastructure events, and significant breakthroughs. Major applied-science or research breakthroughs with a computing/ML/engineering core belong here (e.g. an ML-decoded ancient scroll, an AI-assisted math proof, a notable medical-AI result), not in Worth Reading. Use a `###` heading plus one paragraph.
-- **Projects & Tools** -- concrete things to use or inspect: Show HN launches, OSS releases, libraries, developer tools, ports, and demos. Bulleted; append a `([repo](https://...))` or `([domain.com](https://...))` secondary link when that source was fetched or present in the HN result.
-- **Worth Reading** -- secondary but intellectually rich items: essays, explainers, deep-dives, post-mortems, opinion, and technical curiosities that are worth time but are not the day's lead news. Bulleted; use only the HN item link (no secondary links).
-- **Community Pulse** -- discussion-centric threads: Ask HN, Tell HN, debates, sentiment shifts, and recurring community themes. Each item MUST be a bullet linking to a specific HN discussion thread, exactly like the other bulleted sections: `- **[Title](https://news.ycombinator.com/item?id=...)** -- summary`. Never write link-less thematic bullets.
+- **Top Stories** -- the day's lead, highest-salience HN front-page news, such as major releases, security incidents, business shocks, infrastructure events, and significant breakthroughs (these categories are illustrative, not exhaustive). Major applied-science or research breakthroughs with a computing/ML/engineering core belong here (e.g. an ML-decoded ancient scroll, an AI-assisted math proof, a notable medical-AI result), not in Worth Reading. Use a `###` heading plus one paragraph.
+- **Projects & Tools** -- concrete things to use or inspect, such as Show HN launches, OSS releases, libraries, developer tools, ports, and demos. Bulleted; append a `([repo](https://...))` or `([domain.com](https://...))` secondary link when that source was fetched or present in the HN result.
+- **Worth Reading** -- secondary but intellectually rich items, such as essays, explainers, deep-dives, post-mortems, opinion, and technical curiosities that are worth time but are not the day's lead news. Bulleted; use only the HN item link (no secondary links).
+- **Community Pulse** -- discussion-centric threads, such as Ask HN, Tell HN, debates, sentiment shifts, and recurring community themes. Each item MUST be a bullet linking to a specific HN discussion thread, exactly like the other bulleted sections: `- **[Title](https://news.ycombinator.com/item?id=...)** -- summary`. Never write link-less thematic bullets.
 
 ## Output Format
 
@@ -103,14 +103,14 @@ Use 3 to 5 Top Stories, 2 to 4 Projects & Tools, 2 to 3 Worth Reading items, and
 
 The reference site has a distinctive voice. Follow these rules so the prose reads like it and never feels formulaic:
 
-- **Lead with the fact, not the forum.** Every Top Stories paragraph MUST open with an objective summary of what actually happened (the release, incident, result, or announcement). Never begin a paragraph with "The HN thread...", "The HN discussion...", "On Hacker News...", or "Users discussed...".
+- **Lead with the fact, not the forum.** Every Top Stories paragraph MUST open with an objective summary of what actually happened (the release, incident, result, or announcement). Never open with a forum-first phrase — examples to avoid include "The HN thread...", "The HN discussion...", "On Hacker News...", "Users discussed..." and any similar variant.
 - **Fold the reaction in later.** When you mention the community response, do it in the second or third sentence, after the facts are established.
-- **Kill the "HN thread" monoculture.** Across a single digest, do NOT introduce the community reaction the same way twice. Rotate among varied forms: "Commenters note...", "The community is split...", "Critics argue...", "Skeptics point out...", "Engineers in the thread...", "The consensus is...", "Users report...", "The comments highlight...". The exact phrase "The HN thread" / "The HN discussion" may appear at most once per digest, if at all.
+- **Kill the "HN thread" monoculture.** Within a single digest, do not introduce the community reaction the same way twice; vary the wording naturally. Examples of varied forms (illustrative, not an exhaustive or required list — invent your own as the story dictates): "Commenters note...", "The community is split...", "Critics argue...", "Skeptics point out...", "Engineers in the thread...", "The consensus is...", "Users report...", "The comments highlight...". Do not limit yourself to these phrasings. The exact phrase "The HN thread" or "The HN discussion" may appear at most once per digest, if at all.
 - **Roughly one Top Story in four should mention no community meta at all** — just summarize the news and the substance of the technical debate as fact.
-- **Attribute opinions to the crowd**, do not editorialize in your own voice ("commenters debate whether...", not "this is clearly...").
+- **Attribute opinions to the crowd**, do not editorialize in your own voice (report what commenters debate, not your own verdict).
 - **Capture the angle HN fixated on** — the pragmatic catch, the trade-off, the edge case — not a generic "people reacted".
 - **Length:** Top Stories are one tight paragraph of 40-70 words (2-4 sentences). No filler.
-- **Minor sections are pure curation.** Projects & Tools and Worth Reading items are single noun-phrase fragments of ~20-40 words ("A tiny...", "An open-source...", "A technical breakdown of..."). They must NOT mention Hacker News, the thread, commenters, or community reaction at all.
+- **Minor sections are pure curation.** Projects & Tools and Worth Reading items are single noun-phrase fragments of roughly 20-40 words (e.g. openings like "A tiny...", "An open-source...", "A technical breakdown of..." — illustrative only, vary them freely). They must NOT mention Hacker News, the thread, commenters, or community reaction at all.
 - **Community Pulse** is the one bulleted section where the social split or memorable argument is the point; summarize the debate, not just the topic.
 - Editorial, technically literate, lightly sardonic when earned — never a joke per line.
 
