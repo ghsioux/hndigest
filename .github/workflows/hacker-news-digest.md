@@ -48,7 +48,9 @@ Gather candidate stories from:
 - `https://hn.algolia.com/api/v1/search?tags=show_hn&hitsPerPage=30`
 - relevant `https://news.ycombinator.com/item?id=<id>` discussion pages when needed
 
-Focus on technology, computer science, developer tools, AI/ML, security, privacy, infrastructure, programming languages, hardware, and science stories with strong HN technical relevance. Skip generic politics, celebrity, finance, and culture stories unless the HN discussion has a direct technical angle.
+Mimic the editorial scope of the reference site: "HN technical-interest", not narrow academic computer science. Prioritize AI/ML, software engineering, developer tools, programming languages, security, privacy, infrastructure, databases, operating systems, hardware, semiconductors, technical business shifts, and applied science when the HN discussion has a concrete computing, engineering, or research-method angle. Skip pure obituaries, generic politics, finance, culture, celebrity, and human-interest stories unless there is a direct technical angle in the story or HN discussion.
+
+Do not invent stories, IDs, titles, repository links, source links, quotes, or metrics. Every `news.ycombinator.com/item?id=...` link and title must be copied from a fetched Algolia or Hacker News result. Prefer stories whose HN item page was fetched when the selection is ambiguous. If there are not enough qualifying stories, write fewer items or use `noop`.
 
 ## Output Format
 
@@ -68,13 +70,13 @@ One concise paragraph explaining the news and the HN discussion angle.
 
 ## Projects & Tools
 
-- **[Project name](https://news.ycombinator.com/item?id=...)** -- One concise sentence.
+- **[Project name](https://news.ycombinator.com/item?id=...)** -- One concise sentence. Add `([repo](https://...))` or another source link only when that source was fetched or present in the HN result.
 
 ---
 
 ## Worth Reading
 
-- **[Article title](https://news.ycombinator.com/item?id=...)** -- One concise sentence.
+- **[Article title](https://news.ycombinator.com/item?id=...)** -- One concise sentence. Add an optional source link only when verified.
 
 ---
 
@@ -87,7 +89,7 @@ One concise paragraph explaining the news and the HN discussion angle.
 *Generated from [Hacker News](https://news.ycombinator.com) top stories and discussions.*
 ```
 
-Use 3 to 4 Top Stories, 2 to 5 Projects & Tools, 2 to 4 Worth Reading items, and include Community Pulse only when there is a clear discussion theme. Keep the tone compact, editorial, and similar to the existing files in `digests/`.
+Use 3 to 5 Top Stories, 2 to 5 Projects & Tools, 2 to 4 Worth Reading items, and include Community Pulse only when there is a clear discussion theme. Keep the tone compact, editorial, and similar to the existing files in `digests/`.
 
 ## Safe Output
 
