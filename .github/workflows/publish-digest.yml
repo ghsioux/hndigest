@@ -1,27 +1,44 @@
 name: Publish Digest
 
-# Merges the daily digest pull request opened by the "Hacker News Digest" agentic
-# workflow so the GitHub Pages site is updated automatically at the end of each run.
-# Native auto-merge requires branch protection; this companion job merges directly,
-# which works on an unprotected branch.
+# Single workflow that keeps the GitHub Pages site up to date.
+#
+# It runs:
+#   - after the "Hacker News Digest" agentic workflow completes (to publish the new digest),
+#   - on direct pushes to the site files (e.g. manual edits to index.html),
+#   - and manually via the Actions tab.
+#
+# The merge job merges the digest pull request opened by the agent (native auto-merge
+# needs branch protection, so we merge directly, which works on an unprotected branch).
+# The deploy job then republishes the site from main. Doing both here avoids the
+# GITHUB_TOKEN limitation where a bot push does not trigger an "on: push" workflow.
 
 on:
   workflow_run:
     workflows: ["Hacker News Digest"]
     types: [completed]
+  push:
+    branches: [main]
+    paths:
+      - index.html
+      - .nojekyll
+      - digests/**
+      - .github/workflows/publish-digest.yml
   workflow_dispatch:
 
 permissions:
   contents: write
   pull-requests: write
+  pages: write
+  id-token: write
 
 concurrency:
-  group: publish-digest
+  group: pages
   cancel-in-progress: false
 
 jobs:
   merge:
-    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    # Skip when the upstream agentic run did not succeed.
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - name: Merge open digest pull requests
@@ -40,3 +57,24 @@ jobs:
             echo "Merging digest PR #$pr"
             gh pr merge "$pr" --repo "$REPO" --merge --delete-branch
           done
+
+  deploy:
+    needs: merge
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v6
+        with:
+          ref: main
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: .
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
