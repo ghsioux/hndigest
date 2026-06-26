@@ -52,6 +52,15 @@ Mimic the editorial scope of the reference site: "HN technical-interest", not na
 
 Do not invent stories, IDs, titles, repository links, source links, quotes, or metrics. Every `news.ycombinator.com/item?id=...` link and title must be copied from a fetched Algolia or Hacker News result. Prefer stories whose HN item page was fetched when the selection is ambiguous. If there are not enough qualifying stories, write fewer items or use `noop`.
 
+## Section Definitions
+
+Place each story in the right section. These definitions match the reference site's historical conventions:
+
+- **Top Stories** -- the day's lead, highest-salience HN front-page news: major releases, security incidents, business shocks, infrastructure events, and significant breakthroughs. Major applied-science or research breakthroughs with a computing/ML/engineering core belong here (e.g. an ML-decoded ancient scroll, an AI-assisted math proof, a notable medical-AI result), not in Worth Reading. Use a `###` heading plus one paragraph.
+- **Projects & Tools** -- concrete things to use or inspect: Show HN launches, OSS releases, libraries, developer tools, ports, and demos. Bulleted; append a `([repo](https://...))` or `([domain.com](https://...))` secondary link when that source was fetched or present in the HN result.
+- **Worth Reading** -- secondary but intellectually rich items: essays, explainers, deep-dives, post-mortems, opinion, and technical curiosities that are worth time but are not the day's lead news. Bulleted; use only the HN item link (no secondary links).
+- **Community Pulse** -- discussion-centric threads: Ask HN, Tell HN, debates, sentiment shifts, and recurring community themes. Each item MUST be a bullet linking to a specific HN discussion thread, exactly like the other bulleted sections: `- **[Title](https://news.ycombinator.com/item?id=...)** -- summary`. Never write link-less thematic bullets.
+
 ## Output Format
 
 Match this Markdown structure exactly:
@@ -70,26 +79,26 @@ One concise paragraph explaining the news and the HN discussion angle.
 
 ## Projects & Tools
 
-- **[Project name](https://news.ycombinator.com/item?id=...)** -- One concise sentence. Add `([repo](https://...))` or another source link only when that source was fetched or present in the HN result.
+- **[Project name](https://news.ycombinator.com/item?id=...)** -- One concise sentence. Add `([repo](https://...))` or `([domain.com](https://...))` only when that source was fetched or present in the HN result.
 
 ---
 
 ## Worth Reading
 
-- **[Article title](https://news.ycombinator.com/item?id=...)** -- One concise sentence. Add an optional source link only when verified.
+- **[Article title](https://news.ycombinator.com/item?id=...)** -- One concise sentence. Use only the HN item link.
 
 ---
 
 ## Community Pulse
 
-- **Theme** -- One concise sentence summarizing a recurring discussion theme.
+- **[Discussion thread title](https://news.ycombinator.com/item?id=...)** -- One concise sentence summarizing the discussion and community reaction.
 
 ---
 
 *Generated from [Hacker News](https://news.ycombinator.com) top stories and discussions.*
 ```
 
-Use 3 to 5 Top Stories, 2 to 5 Projects & Tools, 2 to 4 Worth Reading items, and include Community Pulse only when there is a clear discussion theme. Keep the tone compact, editorial, and similar to the existing files in `digests/`.
+Use 3 to 5 Top Stories, 2 to 4 Projects & Tools, 2 to 3 Worth Reading items, and 0 to 2 Community Pulse items. Include Community Pulse only when one or two genuine discussion threads stand out (it is present in roughly half of the reference digests); omit the whole section otherwise rather than inventing a theme. Keep the tone compact, editorial, and similar to the existing files in `digests/`.
 
 ## Safe Output
 
