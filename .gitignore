@@ -1,0 +1,5 @@
+# Scratch directories used for transient analysis — never commit
+analysis_data/
+downloads/
+node_modules/
+*.log
